@@ -1,0 +1,16 @@
+{
+  "name": "solune-contact-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --env development --ip 127.0.0.1 --port 8787",
+    "deploy": "wrangler deploy --env production",
+    "check": "tsc --noEmit",
+    "dry-run": "wrangler deploy --env production --dry-run --outdir dist"
+  },
+  "devDependencies": {
+    "wrangler": "4.141.0",
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "5.20260926.1"
+  }
+}

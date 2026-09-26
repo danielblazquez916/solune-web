@@ -1,0 +1,1820 @@
+.nova {
+  --brand-bg: #f3f5f0;
+  --brand-ink: #172c37;
+  --brand-accent: #2458e5;
+  --brand-soft: #d7e8df;
+  --brand-radius: 8px;
+}
+.eter {
+  --brand-bg: #f3ede3;
+  --brand-ink: #48382e;
+  --brand-accent: #48382e;
+  --brand-soft: #debcb1;
+  --brand-radius: 0px;
+}
+.project-artwork.nova {
+  background: #c5d4d7;
+  color: #172c37;
+}
+.nova-art-grid {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, #e8ece5, #c1d0cf 50%, #879e9b);
+}
+.nova-art-word {
+  position: absolute;
+  font-size: clamp(100px, 15vw, 260px);
+  left: 5%;
+  top: -5%;
+  letter-spacing: -0.09em;
+  line-height: 1;
+  color: #f3f5f090;
+  font-weight: 500;
+}
+.nova-art-word > span {
+  position: absolute;
+  font-size: 0.1em;
+  top: 35%;
+  margin-left: 0.4em;
+}
+.nova-poster {
+  position: absolute;
+  left: 19%;
+  top: 23%;
+  width: 68%;
+  padding: 6%;
+  background: #f3f5f0;
+  box-shadow: 12px 25px 45px #172c3745;
+  transform: rotate(-8deg);
+  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+  z-index: 2;
+}
+.nova-logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-family: 'Manrope Variable', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  width: fit-content;
+  padding-bottom: 11px;
+  color: inherit;
+}
+.nova-logo > svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+}
+.logo-sub {
+  font:
+    5px/1 'Space Grotesk Variable',
+    sans-serif;
+  letter-spacing: 0.16em;
+  position: absolute;
+  left: 34px;
+  bottom: 0;
+  white-space: nowrap;
+}
+.nova-poster img {
+  aspect-ratio: 1.65;
+  object-fit: cover;
+  margin-block: 17px;
+  width: 100%;
+  filter: saturate(0.65);
+}
+.nova-poster-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: clamp(13px, 1.45vw, 24px);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+.round-icon {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #2458e5;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+}
+.artwork-caption {
+  position: absolute;
+  bottom: 5%;
+  left: 6%;
+  font:
+    7px/1.5 'Space Grotesk Variable',
+    sans-serif;
+  letter-spacing: 0.09em;
+}
+.nova-orb {
+  position: absolute;
+  bottom: -9%;
+  right: -8%;
+  width: 43%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 27% 25%, #fafcf3, #b2c6c7 35%, #668587 65%, #3f6164);
+  box-shadow: -20px -5px 50px #fff5;
+}
+.project-artwork.eter {
+  background: #bba18a;
+  color: #f3ede3;
+}
+.eter-art-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.6) brightness(0.65);
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.eter-art-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, #4c33214a, #3d291919 50%, #2b241980);
+}
+.eter-art-label {
+  position: absolute;
+  left: 7%;
+  top: 8%;
+  font:
+    7px/1.4 'Space Grotesk Variable',
+    sans-serif;
+  letter-spacing: 0.2em;
+}
+.eter-art-word {
+  position: absolute;
+  left: 9%;
+  top: 23%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(130px, 19vw, 330px);
+  line-height: 0.8;
+  letter-spacing: -0.065em;
+}
+.eter-art-word > span {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.015em;
+  line-height: 2.5;
+  margin-left: 7px;
+}
+.eter-art-card {
+  position: absolute;
+  width: 25%;
+  aspect-ratio: 0.8;
+  right: 8%;
+  bottom: 11%;
+  background: #f3ede3;
+  color: #48382e;
+  transform: rotate(9deg);
+  box-shadow: 8px 16px 30px #35211644;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.eter-art-card > span {
+  font:
+    55px/0.7 'Cormorant Garamond',
+    serif;
+}
+.eter-art-card > small {
+  font:
+    5px/1.5 'Space Grotesk Variable',
+    sans-serif;
+  letter-spacing: 0.12em;
+}
+.eter-logo {
+  display: inline-block;
+  font:
+    52px/0.75 'Cormorant Garamond',
+    serif;
+  position: relative;
+  padding-bottom: 17px;
+  letter-spacing: -0.07em;
+}
+.eter-logo .logo-sub {
+  left: 0;
+  letter-spacing: 0.1em;
+  font-size: 5px;
+}
+.case-hero {
+  padding-top: 0;
+}
+.case-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+  color: var(--muted);
+  font-size: 10px;
+  gap: 20px;
+}
+.case-hero h1 {
+  font-size: clamp(70px, 12vw, 200px);
+  letter-spacing: -0.07em;
+  line-height: 1.2;
+  margin-block: 32px 15px;
+}
+.case-hero h1 > span {
+  font-size: 0.13em;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 1em;
+  letter-spacing: 0;
+  margin-left: 8px;
+}
+.case-eter .case-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(120px, 20vw, 330px);
+  font-weight: 400;
+  line-height: 0.95;
+}
+.case-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.case-intro > p {
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+.case-intro .eyebrow {
+  color: var(--muted);
+  font-size: 9px;
+}
+.large-artwork {
+  aspect-ratio: 1.95;
+}
+.large-artwork .nova-poster {
+  width: 37%;
+  left: 32%;
+  top: 12%;
+  padding: 3%;
+}
+.large-artwork .nova-art-word {
+  font-size: 25vw;
+  top: 1%;
+  left: 7%;
+}
+.large-artwork .nova-orb {
+  width: 30%;
+  right: -7%;
+  bottom: -35%;
+}
+.large-artwork .nova-poster-bottom {
+  font-size: 24px;
+}
+.large-artwork .eter-art-word {
+  font-size: 23vw;
+  left: 12%;
+  top: 15%;
+}
+.large-artwork .eter-art-photo {
+  object-position: center 60%;
+}
+.large-artwork .eter-art-card {
+  width: 16%;
+  right: 13%;
+  bottom: 17%;
+  padding: 3%;
+}
+.large-artwork .eter-art-card > span {
+  font-size: 85px;
+}
+.large-artwork .eter-art-word > span {
+  font-size: 20px;
+}
+.large-artwork .artwork-caption,
+.large-artwork .eter-art-label {
+  font-size: 10px;
+}
+.guide-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.guide-index a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  font:
+    10px/1.6 'Space Grotesk Variable',
+    sans-serif;
+  color: var(--muted);
+}
+.guide-index a:hover {
+  color: var(--yellow);
+}
+.guide-section {
+  padding-block: 85px;
+  scroll-margin-top: 20px;
+}
+.guide-section + .guide-section {
+  border-top: 1px solid var(--line);
+}
+.guide-section-title {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-items: start;
+}
+.guide-section-title > .eyebrow {
+  color: var(--muted);
+  padding-top: 8px;
+}
+.guide-section-title h2 {
+  font-size: clamp(32px, 4.1vw, 64px);
+  max-width: 720px;
+}
+.concept-copy {
+  margin-left: calc(33.333% + 10px);
+  max-width: 780px;
+}
+.concept-copy > p:nth-child(2) {
+  color: var(--muted);
+  margin-top: 25px;
+  max-width: 550px;
+  font-size: 14px;
+}
+.concept-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 35px;
+}
+.concept-tags > span {
+  font:
+    11px 'Space Grotesk Variable',
+    sans-serif;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+}
+.logo-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.65fr;
+}
+.logo-showcase > div {
+  min-height: 320px;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px;
+}
+.logo-showcase > div:nth-child(2) {
+  background: var(--brand-ink);
+  color: var(--brand-bg);
+}
+.logo-showcase > div:nth-child(3) {
+  background: var(--brand-soft);
+}
+.logo-showcase > div > .eyebrow {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  font-size: 8px;
+}
+.logo-showcase .nova-logo {
+  transform: scale(2);
+}
+.logo-showcase .eter-logo {
+  transform: scale(2);
+}
+.symbol-showcase > span {
+  font-size: 100px;
+  font-weight: 500;
+}
+.eter .symbol-showcase > span {
+  font-family: 'Cormorant Garamond', serif;
+}
+.color-palette {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr 1fr;
+}
+.color-swatch {
+  min-height: 330px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.swatch-dot {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+}
+.color-swatch h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  letter-spacing: -0.04em;
+}
+.color-swatch .eyebrow {
+  font-size: 10px;
+}
+.typography-showcase {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  padding: 55px;
+}
+.type-display > span {
+  display: block;
+  font-size: clamp(100px, 12vw, 190px);
+  line-height: 1.2;
+  letter-spacing: -0.07em;
+  margin-block: 20px;
+}
+.type-display > p {
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+.eter .type-display > span,
+.eter .type-display > p,
+.eter .type-specimens h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+.eter .type-display > p {
+  font-size: 38px;
+}
+.type-specimens {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+.type-specimens > div > .eyebrow:first-child {
+  opacity: 0.8;
+  margin-bottom: 15px;
+  font-size: 9px;
+}
+.type-specimens h3 {
+  font-size: 34px;
+}
+.eter .type-specimens h3 {
+  font-size: 44px;
+}
+.type-specimens p:not(.eyebrow) {
+  font-size: 14px;
+}
+.grid-showcase {
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  padding: 35px;
+  position: relative;
+}
+.grid-columns {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+  height: 320px;
+}
+.grid-columns > span {
+  background: color-mix(in srgb, var(--brand-accent) 10%, transparent);
+  border-inline: 1px solid color-mix(in srgb, var(--brand-accent) 15%, transparent);
+  font:
+    9px 'Space Grotesk Variable',
+    sans-serif;
+  padding-top: 12px;
+  text-align: center;
+}
+.grid-composition {
+  position: absolute;
+  inset: 105px 55px 145px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.grid-composition > div {
+  border: 1px solid var(--brand-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--brand-bg) 65%, transparent);
+  font:
+    11px 'Space Grotesk Variable',
+    sans-serif;
+}
+.grid-composition > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+.grid-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 35px;
+  padding-top: 25px;
+  font-size: 9px;
+}
+.component-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  padding: 55px;
+}
+.component-showcase label {
+  display: block;
+  font-size: 12px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.component-library > h3 {
+  font-size: 36px;
+  margin-block: 25px 30px;
+}
+.component-showcase.eter .component-library > h3 {
+  font:
+    46px/1 'Cormorant Garamond',
+    serif;
+}
+.component-library > input,
+.booking-demo select {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--brand-ink) 30%, transparent);
+  background: transparent;
+  padding: 14px;
+  color: var(--brand-ink);
+  border-radius: var(--brand-radius);
+  font-size: 13px;
+}
+.sample-treatment {
+  border: 1px solid color-mix(in srgb, var(--brand-ink) 25%, transparent);
+  padding: 23px;
+  margin-top: 30px;
+  border-radius: var(--brand-radius);
+}
+.sample-treatment h4 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-block: 25px 12px;
+  letter-spacing: -0.03em;
+}
+.sample-treatment p:not(.eyebrow) {
+  font-size: 13px;
+}
+.sample-treatment > span:last-child {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 12px;
+}
+.sample-caption {
+  font-size: 11px;
+  margin-top: 20px;
+  opacity: 0.75;
+}
+.brand-button {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  background: var(--brand-accent);
+  color: white;
+  padding: 15px 20px;
+  border-radius: var(--brand-radius);
+  font-size: 12px;
+  transition:
+    filter 0.2s,
+    transform 0.2s;
+}
+.brand-button:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+.eter .brand-button {
+  background: transparent;
+  border: 1px solid var(--brand-ink);
+  color: var(--brand-ink);
+}
+.eter .brand-button:hover {
+  color: var(--brand-bg);
+  background: var(--brand-ink);
+}
+.booking-demo {
+  max-width: 430px;
+  width: 100%;
+  margin-inline: auto;
+}
+.booking-heading h3 {
+  font-size: 32px;
+  margin-block: 12px;
+}
+.eter .booking-heading h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+}
+.booking-heading p:not(.eyebrow) {
+  font-size: 11px;
+}
+.booking-demo > label {
+  display: block;
+  font-size: 12px;
+  margin-block: 20px 8px;
+}
+.booking-demo fieldset {
+  padding: 0;
+  border: 0;
+  margin: 20px 0;
+}
+.booking-demo legend {
+  font-size: 11px;
+  margin-bottom: 12px;
+}
+.calendar-week,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+.calendar-week {
+  font:
+    10px 'Space Grotesk Variable',
+    sans-serif;
+  padding-bottom: 10px;
+}
+.calendar-days button {
+  min-height: 35px;
+  border: 1px solid transparent;
+  border-radius: var(--brand-radius);
+  font-size: 11px;
+}
+.calendar-days button:hover {
+  border-color: var(--brand-ink);
+}
+.calendar-days button.selected {
+  background: var(--brand-accent);
+  color: white;
+}
+.booking-times button {
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--brand-ink) 35%, transparent);
+  margin-right: 7px;
+  font-size: 11px;
+  border-radius: var(--brand-radius);
+}
+.booking-times button.selected {
+  background: var(--brand-accent);
+  color: white;
+}
+.booking-demo .brand-button {
+  width: 100%;
+}
+.booking-status {
+  min-height: 4em;
+  font-size: 10px;
+  margin-top: 14px;
+}
+.nova :focus-visible,
+.eter :focus-visible {
+  outline-color: var(--brand-accent);
+  outline-offset: 3px;
+}
+.guide-note {
+  max-width: 670px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+.mockup-frame {
+  background: #e5e6e0;
+  border: 1px solid #ffffff28;
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--brand-ink);
+}
+.browser-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 5px 12px 12px;
+  font:
+    9px 'Space Grotesk Variable',
+    sans-serif;
+  color: #51554d;
+}
+.browser-chrome > span:first-child {
+  font-size: 7px;
+  letter-spacing: 3px;
+}
+.mockup-shell {
+  background: var(--brand-bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mockup-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 25px 35px;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-ink) 15%, transparent);
+}
+.mockup-nav nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.mockup-nav button {
+  min-height: 32px;
+  font-size: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+}
+.mockup-nav button[aria-current],
+.mockup-nav button:hover {
+  border-color: currentColor;
+}
+.mockup-panel {
+  min-height: 480px;
+}
+.mock-home {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 500px;
+}
+.mock-home-copy {
+  padding: 55px 40px;
+}
+.mock-home-copy > .eyebrow {
+  font-size: 8px;
+}
+.mock-home-copy h3 {
+  font-size: clamp(40px, 5vw, 85px);
+  margin-block: 35px 25px;
+  letter-spacing: -0.055em;
+}
+.mock-home-copy h3 em {
+  font-style: normal;
+  color: var(--brand-accent);
+}
+.mock-home-copy p {
+  font-size: 13px;
+  margin-bottom: 26px;
+}
+.mock-home-image {
+  overflow: hidden;
+  position: relative;
+}
+.mock-home-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nova-home .mock-home-image {
+  margin: 35px 35px 35px 0;
+  border-radius: 200px 200px 8px 8px;
+}
+.eter-home {
+  grid-template-columns: 1fr 1.1fr;
+  padding: 30px;
+  gap: 25px;
+}
+.eter-home .mock-home-copy {
+  padding: 15px 15px 35px;
+  align-self: center;
+}
+.eter-home .mock-home-copy h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 7vw, 110px);
+  font-weight: 400;
+  line-height: 0.9;
+}
+.eter-home .mock-home-copy h3 em {
+  font-style: italic;
+}
+.eter-home .mock-home-image {
+  min-height: 460px;
+}
+.eter-home .mock-home-image img {
+  filter: saturate(0.55);
+}
+.eter-image-caption {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  font:
+    italic 35px/0.95 'Cormorant Garamond',
+    serif;
+  color: #fff;
+  background: rgb(45 31 24 / 92%);
+  padding: 10px 14px;
+}
+.mock-footer {
+  padding: 18px 35px;
+  border-top: 1px solid color-mix(in srgb, var(--brand-ink) 15%, transparent);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font:
+    8px 'Space Grotesk Variable',
+    sans-serif;
+}
+.mock-treatments {
+  padding: 45px;
+}
+.mock-treatments > h3 {
+  font-size: 44px;
+  margin-block: 25px 35px;
+}
+.eter .mock-treatments > h3 {
+  font:
+    55px/1 'Cormorant Garamond',
+    serif;
+}
+.mock-treatments article {
+  display: grid;
+  grid-template-columns: 25px 1fr 90px 30px;
+  gap: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--brand-ink) 20%, transparent);
+  padding-block: 25px;
+  align-items: center;
+}
+.mock-treatments article > span {
+  font-size: 11px;
+}
+.mock-treatments h4 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.mock-treatments p {
+  font-size: 11px;
+  margin-top: 8px;
+}
+.mock-treatments button {
+  font-size: 25px;
+}
+.mock-team {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  padding: 45px;
+}
+.mock-team h3 {
+  font-size: 40px;
+  margin-block: 30px 25px;
+}
+.eter .mock-team h3 {
+  font:
+    55px/1 'Cormorant Garamond',
+    serif;
+}
+.mock-team p {
+  font-size: 13px;
+}
+.mock-team small {
+  font-size: 9px;
+  opacity: 0.8;
+}
+.mock-team > img {
+  height: 380px;
+  width: 100%;
+  object-fit: cover;
+}
+.mock-specialists {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-block: 25px;
+  font-size: 12px;
+}
+.mock-specialists > span {
+  border-top: 1px solid currentColor;
+  padding-top: 10px;
+}
+.mockup-panel > .booking-demo {
+  padding: 35px 15px 25px;
+}
+.experience-gallery {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  margin-top: 35px;
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+}
+.experience-gallery > img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+.experience-gallery > div {
+  padding: 45px;
+  align-self: center;
+}
+.experience-gallery h3 {
+  white-space: pre-line;
+  font-size: 48px;
+  margin-block: 30px;
+}
+.experience-gallery.eter {
+  grid-template-columns: 1fr 1fr;
+}
+.experience-gallery.eter h3 {
+  font:
+    70px/0.9 'Cormorant Garamond',
+    serif;
+}
+.experience-gallery p:not(.eyebrow) {
+  font-size: 13px;
+}
+.mobile-showcase {
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12%;
+  padding: 75px 40px;
+}
+.mobile-copy {
+  max-width: 320px;
+}
+.mobile-copy h3 {
+  font-size: 60px;
+  white-space: pre-line;
+  margin-block: 30px;
+}
+.eter .mobile-copy h3 {
+  font:
+    75px/0.9 'Cormorant Garamond',
+    serif;
+}
+.mobile-copy p {
+  font-size: 14px;
+}
+.phone-frame {
+  width: 305px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  padding: 9px;
+  background: #222620;
+  box-shadow: 20px 30px 45px #172c3730;
+}
+.phone-frame .browser-chrome {
+  color: #eee;
+  font-size: 7px;
+  padding: 5px 12px 10px;
+}
+.phone-frame .mockup-shell {
+  border-radius: 20px;
+}
+.phone-frame .mockup-nav {
+  padding: 20px 17px 12px;
+  display: block;
+}
+.phone-frame .mockup-nav .nova-logo {
+  font-size: 25px;
+}
+.phone-frame .mockup-nav .eter-logo {
+  font-size: 40px;
+}
+.phone-frame .mockup-nav nav {
+  gap: 12px;
+  margin-top: 17px;
+}
+.phone-frame .mockup-nav button {
+  font-size: 8px;
+}
+.phone-frame .mockup-panel {
+  min-height: 400px;
+}
+.phone-frame .mock-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.phone-frame .mock-home-copy {
+  padding: 25px 20px;
+}
+.phone-frame .mock-home-copy .eyebrow {
+  font-size: 6px;
+}
+.phone-frame .mock-home-copy h3 {
+  font-size: 42px;
+  margin-block: 20px;
+}
+.phone-frame .mock-home-copy p {
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+.phone-frame .brand-button {
+  font-size: 10px;
+  padding: 12px 15px;
+}
+.phone-frame .mock-home-image {
+  height: 175px;
+  min-height: 0;
+  margin: 0 20px 20px;
+  border-radius: 0;
+}
+.phone-frame .eter-home {
+  padding: 0;
+  gap: 0;
+}
+.phone-frame .eter-home h3 {
+  font-size: 58px;
+}
+.phone-frame .eter-image-caption {
+  font-size: 22px;
+  bottom: 15px;
+  left: 15px;
+}
+.phone-frame .mock-footer {
+  padding: 15px;
+  font-size: 6px;
+}
+.phone-frame .mock-footer > span:last-child {
+  max-width: 100px;
+  text-align: right;
+}
+.phone-frame .mock-treatments {
+  padding: 25px 18px;
+}
+.phone-frame .mock-treatments > .eyebrow {
+  font-size: 7px;
+}
+.phone-frame .mock-treatments > h3 {
+  font-size: 32px;
+}
+.phone-frame .mock-treatments article {
+  grid-template-columns: 1fr 45px;
+  gap: 12px;
+}
+.phone-frame .mock-treatments article > span:first-child,
+.phone-frame .mock-treatments article > button {
+  display: none;
+}
+.phone-frame .mock-treatments h4 {
+  font-size: 17px;
+}
+.phone-frame .mock-treatments p {
+  font-size: 10px;
+}
+.phone-frame .mock-treatments article > span {
+  font-size: 9px;
+}
+.phone-frame .mock-team {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  gap: 20px;
+}
+.phone-frame .mock-team h3 {
+  font-size: 33px;
+  margin-block: 20px;
+}
+.phone-frame .mock-team > img {
+  height: 160px;
+}
+.phone-frame .mock-team p {
+  font-size: 11px;
+}
+.phone-frame .booking-heading > .eyebrow {
+  font-size: 8px;
+}
+.phone-frame .booking-heading h3 {
+  font-size: 29px;
+}
+.phone-frame .booking-demo select {
+  padding: 12px 8px;
+  font-size: 11px;
+}
+.phone-frame .booking-times button {
+  padding: 8px 10px;
+}
+.details-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+}
+.detail-number {
+  display: block;
+  color: var(--yellow);
+  font:
+    12px 'Space Grotesk Variable',
+    sans-serif;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+.details-showcase h3 {
+  font-size: 28px;
+  margin-block: 28px 18px;
+}
+.details-showcase p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.project-navigation {
+  border-top: 1px solid var(--line);
+  padding-block: 60px 90px;
+}
+.next-project {
+  display: block;
+  margin-top: 65px;
+}
+.next-project > .eyebrow {
+  color: var(--muted);
+}
+.next-project > span:last-child {
+  font-size: clamp(48px, 8vw, 135px);
+  letter-spacing: -0.06em;
+  line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.next-project:hover > span:last-child {
+  color: var(--yellow);
+}
+@media (max-width: 1100px) {
+  .logo-showcase > div {
+    min-height: 250px;
+  }
+  .logo-showcase .nova-logo,
+  .logo-showcase .eter-logo {
+    transform: scale(1.6);
+  }
+  .component-showcase {
+    padding: 35px;
+    gap: 35px;
+  }
+  .mockup-nav {
+    padding: 22px;
+  }
+  .mockup-nav nav {
+    gap: 15px;
+  }
+  .mock-home-copy {
+    padding: 35px 25px;
+  }
+  .mock-home {
+    min-height: 440px;
+  }
+  .eter-home .mock-home-image {
+    min-height: 400px;
+  }
+  .mock-treatments {
+    padding: 30px;
+  }
+  .typography-showcase {
+    padding: 35px;
+    gap: 30px;
+  }
+  .color-swatch {
+    min-height: 270px;
+    padding: 20px;
+  }
+  .color-swatch h3 {
+    font-size: 20px;
+  }
+  .experience-gallery > div {
+    padding: 30px;
+  }
+  .experience-gallery h3 {
+    font-size: 38px;
+  }
+  .mobile-showcase {
+    gap: 8%;
+  }
+  .mobile-copy h3 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 800px) {
+  .guide-section {
+    padding-block: 60px;
+  }
+  .guide-section-title {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 35px;
+  }
+  .guide-section-title h2 {
+    font-size: 38px;
+    max-width: 550px;
+  }
+  .concept-copy {
+    margin-left: 15%;
+  }
+  .case-meta > span:nth-child(2) {
+    display: none;
+  }
+  .case-intro {
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+  }
+  .case-intro > p {
+    font-size: 22px;
+  }
+  .large-artwork {
+    aspect-ratio: 1.5;
+  }
+  .large-artwork .nova-poster {
+    width: 48%;
+    left: 25%;
+    top: 15%;
+    padding: 4%;
+  }
+  .large-artwork .nova-art-word {
+    font-size: 30vw;
+  }
+  .large-artwork .eter-art-word {
+    font-size: 30vw;
+    top: 22%;
+  }
+  .large-artwork .eter-art-card {
+    width: 21%;
+    right: 9%;
+    bottom: 12%;
+  }
+  .logo-showcase > div {
+    min-height: 210px;
+  }
+  .logo-showcase .nova-logo,
+  .logo-showcase .eter-logo {
+    transform: scale(1.2);
+  }
+  .logo-showcase > div > .eyebrow {
+    font-size: 6px;
+    left: 15px;
+  }
+  .color-swatch {
+    min-height: 230px;
+    padding: 18px;
+  }
+  .color-swatch h3 {
+    font-size: 18px;
+  }
+  .typography-showcase {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .type-display > span {
+    font-size: 130px;
+  }
+  .type-specimens {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .type-specimens > div:last-child {
+    grid-column: 1 / -1;
+  }
+  .component-showcase {
+    gap: 25px;
+    padding: 25px;
+  }
+  .component-library > h3 {
+    font-size: 29px;
+  }
+  .component-showcase.eter .component-library > h3 {
+    font-size: 36px;
+  }
+  .booking-heading h3 {
+    font-size: 27px;
+  }
+  .eter .booking-heading h3 {
+    font-size: 34px;
+  }
+  .component-showcase .eyebrow {
+    font-size: 8px;
+  }
+  .calendar-days {
+    gap: 2px;
+  }
+  .calendar-days button {
+    min-height: 30px;
+  }
+  .booking-times button {
+    margin-right: 4px;
+    padding: 8px;
+  }
+  .mockup-nav nav {
+    gap: 12px;
+  }
+  .mockup-nav button {
+    font-size: 9px;
+  }
+  .mock-home-copy h3 {
+    font-size: 42px;
+  }
+  .mock-home-copy > .eyebrow {
+    font-size: 6px;
+  }
+  .mock-home-copy {
+    padding: 30px 20px;
+  }
+  .mock-home-copy p {
+    font-size: 11px;
+  }
+  .mock-home-copy .brand-button {
+    font-size: 10px;
+    padding: 12px;
+    gap: 15px;
+  }
+  .nova-home .mock-home-image {
+    margin: 25px 20px 25px 0;
+  }
+  .mock-home {
+    min-height: 380px;
+  }
+  .mockup-panel {
+    min-height: 380px;
+  }
+  .eter-home {
+    padding: 20px;
+    gap: 5px;
+  }
+  .eter-home .mock-home-copy h3 {
+    font-size: 57px;
+  }
+  .eter-home .mock-home-image {
+    min-height: 340px;
+  }
+  .mock-team {
+    padding: 25px;
+    gap: 25px;
+  }
+  .mock-team h3 {
+    font-size: 30px;
+  }
+  .mock-team > img {
+    height: 350px;
+  }
+  .mock-team p {
+    font-size: 11px;
+  }
+  .experience-gallery > img {
+    height: 370px;
+  }
+  .experience-gallery h3 {
+    font-size: 32px;
+  }
+  .experience-gallery.eter h3 {
+    font-size: 55px;
+  }
+  .experience-gallery .eyebrow {
+    font-size: 8px;
+  }
+  .mobile-showcase {
+    padding: 50px 25px;
+    gap: 30px;
+  }
+  .mobile-copy {
+    max-width: 200px;
+  }
+  .mobile-copy h3 {
+    font-size: 42px;
+  }
+  .eter .mobile-copy h3 {
+    font-size: 52px;
+  }
+  .mobile-copy p {
+    font-size: 12px;
+  }
+  .mobile-copy .eyebrow {
+    font-size: 8px;
+  }
+  .details-showcase {
+    gap: 25px;
+  }
+  .details-showcase h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 550px) {
+  .nova-art-word {
+    font-size: 36vw;
+  }
+  .nova-poster-bottom {
+    font-size: 15px;
+  }
+  .nova-poster {
+    padding: 6%;
+    top: 24%;
+  }
+  .nova-poster img {
+    margin-block: 14px;
+  }
+  .eter-art-word {
+    font-size: 47vw;
+    top: 24%;
+  }
+  .eter-art-card > span {
+    font-size: 42px;
+  }
+  .eter-art-word > span {
+    font-size: 12px;
+  }
+  .eter-art-label,
+  .artwork-caption {
+    font-size: 6px;
+  }
+  .case-meta {
+    margin-top: 35px;
+    font-size: 8px;
+  }
+  .case-hero h1 {
+    font-size: 13vw;
+    margin-block: 25px;
+  }
+  .case-hero h1 > span {
+    display: none;
+  }
+  .case-eter .case-hero h1 {
+    font-size: 36vw;
+  }
+  .case-intro {
+    margin-bottom: 30px;
+  }
+  .case-intro > p {
+    font-size: 21px;
+  }
+  .case-intro > .eyebrow {
+    font-size: 8px;
+  }
+  .large-artwork {
+    aspect-ratio: 1;
+  }
+  .large-artwork .nova-poster {
+    width: 66%;
+    left: 20%;
+    top: 24%;
+    padding: 6%;
+  }
+  .large-artwork .nova-poster-bottom {
+    font-size: 16px;
+  }
+  .large-artwork .nova-art-word {
+    font-size: 36vw;
+    top: -2%;
+  }
+  .large-artwork .nova-orb {
+    width: 45%;
+    right: -15%;
+    bottom: -8%;
+  }
+  .large-artwork .eter-art-word {
+    font-size: 49vw;
+    top: 24%;
+    left: 9%;
+  }
+  .large-artwork .eter-art-word > span {
+    font-size: 13px;
+  }
+  .large-artwork .eter-art-card {
+    width: 25%;
+    padding: 5%;
+    right: 8%;
+    bottom: 11%;
+  }
+  .large-artwork .eter-art-card > span {
+    font-size: 45px;
+  }
+  .large-artwork .artwork-caption,
+  .large-artwork .eter-art-label {
+    font-size: 6px;
+  }
+  .guide-index {
+    gap: 12px 18px;
+    padding-block: 25px;
+  }
+  .guide-index a {
+    font-size: 8px;
+  }
+  .guide-section {
+    padding-block: 48px;
+  }
+  .guide-section-title {
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+  .guide-section-title > .eyebrow {
+    font-size: 9px;
+  }
+  .guide-section-title h2 {
+    font-size: 33px;
+  }
+  .concept-copy {
+    margin-left: 0;
+  }
+  .concept-copy > p:nth-child(2) {
+    font-size: 12px;
+  }
+  .concept-tags {
+    gap: 7px;
+  }
+  .concept-tags > span {
+    font-size: 9px;
+    padding: 8px 12px;
+  }
+  .logo-showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+  .logo-showcase > div {
+    min-height: 190px;
+    padding: 15px;
+  }
+  .logo-showcase > div:last-child {
+    grid-column: 1 / -1;
+    min-height: 140px;
+  }
+  .logo-showcase .nova-logo {
+    transform: scale(1.2);
+  }
+  .logo-showcase .eter-logo {
+    transform: scale(1.3);
+  }
+  .symbol-showcase > span {
+    font-size: 70px;
+  }
+  .color-palette {
+    grid-template-columns: 1fr 1fr;
+  }
+  .color-swatch {
+    min-height: 200px;
+  }
+  .color-swatch h3 {
+    font-size: 20px;
+  }
+  .color-swatch .eyebrow {
+    font-size: 9px;
+  }
+  .typography-showcase {
+    padding: 25px;
+    gap: 35px;
+  }
+  .type-display > span {
+    font-size: 105px;
+  }
+  .type-display > p {
+    font-size: 25px;
+  }
+  .type-display > .eyebrow {
+    font-size: 8px;
+  }
+  .type-specimens {
+    display: flex;
+    gap: 25px;
+  }
+  .type-specimens h3 {
+    font-size: 29px;
+  }
+  .type-specimens p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  .type-specimens > div > .eyebrow:first-child {
+    margin-bottom: 10px;
+  }
+  .type-specimens .eyebrow {
+    font-size: 8px;
+  }
+  .grid-showcase {
+    padding: 20px;
+  }
+  .grid-columns {
+    gap: 5px;
+    height: 240px;
+  }
+  .grid-columns > span {
+    font-size: 6px;
+  }
+  .grid-composition {
+    inset: 75px 30px 145px;
+    gap: 10px;
+  }
+  .grid-composition > div {
+    font-size: 8px;
+  }
+  .grid-specs {
+    gap: 10px 15px;
+    font-size: 7px;
+  }
+  .component-showcase {
+    grid-template-columns: 1fr;
+    padding: 25px 20px;
+    gap: 45px;
+  }
+  .component-showcase > .booking-demo {
+    border-top: 1px solid color-mix(in srgb, var(--brand-ink) 30%, transparent);
+    padding-top: 30px;
+  }
+  .calendar-days button {
+    min-height: 35px;
+  }
+  .mockup-frame {
+    padding: 5px;
+    border-radius: 7px;
+  }
+  .browser-chrome {
+    font-size: 7px;
+    padding: 7px 8px 10px;
+  }
+  .mockup-nav {
+    display: block;
+    padding: 22px 20px 10px;
+  }
+  .mockup-nav nav {
+    margin-top: 20px;
+    gap: 17px;
+  }
+  .mockup-nav button {
+    font-size: 9px;
+  }
+  .mock-home {
+    display: flex;
+    flex-direction: column;
+  }
+  .mock-home-copy {
+    padding: 30px 25px;
+  }
+  .mock-home-copy > .eyebrow {
+    font-size: 7px;
+  }
+  .mock-home-copy h3 {
+    font-size: 48px;
+  }
+  .mock-home-copy p {
+    font-size: 12px;
+  }
+  .mock-home-copy .brand-button {
+    font-size: 11px;
+    padding: 13px 16px;
+  }
+  .nova-home .mock-home-image {
+    margin: 0 25px 25px;
+    height: 210px;
+    border-radius: 130px 130px 8px 8px;
+  }
+  .eter-home {
+    padding: 0;
+    gap: 0;
+  }
+  .eter-home .mock-home-copy {
+    padding: 30px 25px;
+    align-self: stretch;
+  }
+  .eter-home .mock-home-copy h3 {
+    font-size: 68px;
+  }
+  .eter-home .mock-home-image {
+    min-height: 0;
+    height: 280px;
+    margin: 0 25px 25px;
+  }
+  .mock-footer {
+    padding: 18px;
+    font-size: 6px;
+  }
+  .mock-footer > span:last-child {
+    max-width: 115px;
+    text-align: right;
+  }
+  .mock-treatments {
+    padding: 30px 20px;
+  }
+  .mock-treatments > .eyebrow {
+    font-size: 7px;
+  }
+  .mock-treatments > h3 {
+    font-size: 33px;
+  }
+  .eter .mock-treatments > h3 {
+    font-size: 42px;
+  }
+  .mock-treatments article {
+    grid-template-columns: 1fr 50px;
+    gap: 12px;
+  }
+  .mock-treatments article > span:first-child {
+    display: none;
+  }
+  .mock-treatments article > button {
+    justify-self: end;
+    grid-column: 2;
+  }
+  .mock-treatments h4 {
+    font-size: 19px;
+  }
+  .mock-treatments article > span {
+    font-size: 9px;
+  }
+  .mock-team {
+    grid-template-columns: 1fr;
+    padding: 25px 20px;
+  }
+  .mock-team > img {
+    height: 240px;
+  }
+  .mock-team h3 {
+    font-size: 33px;
+  }
+  .mockup-panel > .booking-demo {
+    padding: 30px 20px;
+  }
+  .experience-gallery,
+  .experience-gallery.eter {
+    grid-template-columns: 1fr;
+    margin-top: 25px;
+  }
+  .experience-gallery > img {
+    height: 280px;
+  }
+  .experience-gallery > div {
+    padding: 30px;
+  }
+  .experience-gallery h3 {
+    font-size: 40px;
+  }
+  .experience-gallery.eter h3 {
+    font-size: 60px;
+  }
+  .mobile-showcase {
+    padding: 35px 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+  .mobile-copy {
+    max-width: 260px;
+    width: 100%;
+  }
+  .mobile-copy h3 {
+    font-size: 45px;
+    margin-block: 20px;
+  }
+  .mobile-copy p {
+    font-size: 13px;
+  }
+  .phone-frame {
+    width: min(285px, 100%);
+    padding: 8px;
+    border-radius: 28px;
+  }
+  .phone-frame .mock-home-copy h3 {
+    font-size: 41px;
+  }
+  .phone-frame .mock-home-copy {
+    padding: 25px 18px;
+  }
+  .phone-frame .mock-home-image {
+    margin: 0 18px 18px;
+    height: 170px;
+    border-radius: 0;
+  }
+  .phone-frame .mockup-nav nav {
+    gap: 11px;
+  }
+  .phone-frame .mockup-nav button {
+    font-size: 7.5px;
+  }
+  .details-showcase {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .details-showcase h3 {
+    font-size: 27px;
+    margin-block: 20px 15px;
+  }
+  .project-navigation {
+    padding-block: 40px 55px;
+  }
+  .next-project {
+    margin-top: 45px;
+  }
+  .next-project > span:last-child {
+    font-size: 9vw;
+  }
+  .next-project > .eyebrow {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-button:hover,
+  .project-link:hover .nova-poster,
+  .project-link:hover .eter-art-photo {
+    transform: none;
+  }
+  .project-link:hover .nova-poster {
+    transform: rotate(-8deg);
+  }
+}

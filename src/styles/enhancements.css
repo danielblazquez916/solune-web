@@ -1,0 +1,210 @@
+html {
+  scroll-padding-top: 110px;
+}
+html.lenis {
+  scroll-behavior: auto;
+}
+#root {
+  position: relative;
+  isolation: isolate;
+}
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+img {
+  height: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  margin-inline: 0;
+  padding-inline: var(--gutter);
+  max-width: none;
+  background: rgb(16 17 15 / 68%);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  transition:
+    background-color 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+  border-bottom-color: rgb(245 243 236 / 10%);
+}
+.footer-wordmark {
+  pointer-events: none;
+}
+.footer-top {
+  position: relative;
+  z-index: 1;
+}
+.footer-top nav a {
+  min-height: 44px;
+  padding-block: 8px;
+}
+.site-header.is-scrolled {
+  background: rgb(16 17 15 / 87%);
+  border-bottom-color: rgb(255 216 74 / 15%);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 12%);
+}
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.language-switcher button {
+  padding: 10px 7px;
+  min-width: 30px;
+  min-height: 38px;
+  font:
+    11px/1 'Space Grotesk Variable',
+    sans-serif;
+  color: var(--muted);
+  position: relative;
+  transition: color 200ms ease;
+}
+.language-switcher button[aria-pressed='true'] {
+  color: var(--yellow);
+}
+.language-switcher button[aria-pressed='true']::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  height: 1px;
+  background: currentColor;
+  left: 8px;
+  right: 8px;
+}
+.language-switcher button:hover {
+  color: var(--white);
+}
+.cursor-glow-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.cursor-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+  will-change: transform;
+}
+.cursor-glow > span {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  top: -230px;
+  left: -230px;
+  background: radial-gradient(
+    circle,
+    rgb(255 216 74 / 13%) 0%,
+    rgb(245 194 50 / 6%) 27%,
+    rgb(232 178 35 / 2%) 48%,
+    transparent 70%
+  );
+  filter: blur(24px);
+}
+.animated-photo {
+  transition: scale 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center;
+}
+.mock-home-image,
+.about-image {
+  overflow: hidden;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-link:hover .eter-art-photo {
+    scale: 1.025;
+  }
+  .mock-home-image:hover .animated-photo {
+    scale: 1.025;
+  }
+  .experience-gallery:hover .animated-photo {
+    scale: 1.015;
+  }
+}
+.experience-gallery {
+  overflow: hidden;
+}
+.experience-gallery > div {
+  position: relative;
+  z-index: 1;
+  background: var(--brand-soft);
+}
+.hero-headline {
+  white-space: nowrap;
+}
+html[lang='en'] .hero-headline {
+  letter-spacing: -0.07em;
+}
+@media (max-width: 800px) {
+  .header-controls {
+    gap: 18px;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    scroll-padding-top: 88px;
+  }
+  .header-controls {
+    gap: 12px;
+  }
+  .language-switcher button {
+    font-size: 10px;
+    min-width: 28px;
+    padding-inline: 6px;
+  }
+  .project-tags {
+    max-width: 42%;
+  }
+  .project-tags > span:first-child {
+    font-size: 6px;
+  }
+  .project-caption h3 {
+    font-size: 21px;
+  }
+  .offset-title {
+    margin-left: 0.15em;
+  }
+  html[lang='en'] .manifesto h2 {
+    font-size: 8.35vw;
+  }
+  html[lang='en'] .cta-title {
+    font-size: 12.4vw;
+  }
+  html[lang='en'] .cta-arrow {
+    font-size: 0.75em;
+  }
+  .guide-index {
+    gap: 9px 16px;
+  }
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-glow-layer {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animated-photo {
+    transform: none !important;
+    scale: 1 !important;
+  }
+  .site-header,
+  .language-switcher button {
+    transition: none;
+  }
+}

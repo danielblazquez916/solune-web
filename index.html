@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10110f" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #10110f;
+      }
+      #boot-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: grid;
+        place-items: center;
+        background: #10110f;
+        color: #f5f3ec;
+        opacity: 1;
+        transition: opacity 320ms ease;
+      }
+      .boot-brand {
+        position: relative;
+        width: min(210px, 55vw);
+        text-align: center;
+      }
+      .boot-brand::before {
+        content: '';
+        position: absolute;
+        inset: -100px -70px;
+        background: radial-gradient(ellipse, #ffd84a12, transparent 65%);
+        pointer-events: none;
+      }
+      .boot-wordmark {
+        position: relative;
+        font:
+          600 74px/1 Arial,
+          sans-serif;
+        letter-spacing: -0.085em;
+      }
+      .boot-wordmark sup {
+        position: absolute;
+        font:
+          10px/1 Arial,
+          sans-serif;
+        letter-spacing: 0;
+        margin: 9px 0 0 7px;
+        color: #ffd84a;
+      }
+      .boot-track {
+        position: relative;
+        margin-top: 30px;
+        height: 1px;
+        background: #ffffff20;
+        overflow: hidden;
+      }
+      .boot-track::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent, #ffd84a, transparent);
+        animation: boot-light 1.3s ease-in-out infinite;
+      }
+      #boot-screen.is-ready {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #boot-screen.is-ready .boot-track::after {
+        animation: none;
+        background: #ffd84a;
+      }
+      @keyframes boot-light {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #boot-screen {
+          transition: none;
+        }
+        .boot-track::after {
+          animation: none;
+          background: #ffd84a;
+          opacity: 0.65;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="boot-screen" role="status" aria-label="LUMA" aria-live="polite">
+      <div class="boot-brand" aria-hidden="true">
+        <div class="boot-wordmark">luma<sup>®</sup></div>
+        <div class="boot-track"></div>
+      </div>
+    </div>
+    <div id="root" inert aria-busy="true"></div>
+    <noscript
+      ><style>
+        #boot-screen {
+          display: none;
+        }
+      </style>
+      <p style="color: #f5f3ec; padding: 24px; font-family: sans-serif">
+        <span lang="es">Activa JavaScript para visitar LUMA.</span> /
+        <span lang="en">Enable JavaScript to visit LUMA.</span>
+      </p></noscript
+    >
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
