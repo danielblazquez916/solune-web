@@ -1,7 +1,7 @@
 import { t, useLocale } from '../../i18n';
 import SEO from '../../components/ui/SEO';
 import { PageHero } from '../../components/ui/Primitives';
-import ContactForm from '../../components/ui/ContactForm';
+import ContactMethods from './ContactMethods';
 import { motion, useReducedMotion } from 'framer-motion';
 import './contact.css';
 
@@ -78,16 +78,7 @@ export default function Contact() {
             </p>
           </div>
         </div>
-        <div className="contact-form-column">
-          <div className="contact-form-heading">
-            <p className="eyebrow">
-              <span className="status-dot" />
-              {t('contact.formKicker')}
-            </p>
-            <h2>{t('contact.formTitle')}</h2>
-          </div>
-          <ContactForm />
-        </div>
+        <ContactMethods />
       </section>
     </div>
   );

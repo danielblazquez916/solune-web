@@ -42,8 +42,7 @@ export default function Footer() {
       </div>
       <div className="footer-wordmark" aria-hidden="true">
         {t('footer.009')}
-        <span>®</span>
-        <span className="footer-spark">✳</span>
+        
       </div>
       <div className="footer-bottom eyebrow">
         <span>

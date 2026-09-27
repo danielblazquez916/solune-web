@@ -14,9 +14,11 @@ Implementado el 25-09-2026. Rutas bilingües `/legal`, `/privacidad` y `/cookies
 
 | Clave | Tipo | Activación | Duración |
 | --- | --- | --- | --- |
-| `luma.consent` | localStorage | Decisión expresa, incluida negativa | 180 días desde la decisión |
-| `luma.locale` | localStorage | Solo al aceptar Preferencias | Hasta retirar Preferencias o detectar caducidad del consentimiento |
+| `solune.consent` | localStorage | Decisión expresa, incluida negativa | 180 días desde la decisión |
+| `solune.locale` | localStorage | Solo al aceptar Preferencias | Hasta retirar Preferencias o detectar caducidad del consentimiento |
 | `_ga`, `_ga_<ID>` | Cookies propias de GA4 | Solo con configuración real y consentimiento analítico | Configuradas a 180 días sin renovación automática |
+
+El cambio de marca migra automáticamente el consentimiento y el idioma de la versión anterior a las claves de Solune, conservando la fecha de caducidad y sin ampliar permisos. Si ya existe una decisión nueva, prevalece.
 
 localStorage no caduca por sí mismo: la aplicación comprueba y elimina registros caducados al arrancar y durante la visita. Si el navegador bloquea almacenamiento, mantiene la decisión en memoria. Cerrar el panel, navegar o hacer scroll no concede permiso. El panel usa diálogo nativo, foco contenido y pausa de Lenis.
 
@@ -41,5 +43,9 @@ Verificación en navegador: rechazo persistente tras recarga, configuración des
 - [LSSI](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758)
 - [Consent Mode de Google](https://developers.google.com/tag-platform/security/concepts/consent-mode)
 - [Configuración de GA4](https://developers.google.com/analytics/devguides/collection/ga4/reference/config)
+
+## Reservas con Cal.com
+
+El SDK oficial y la agenda de Cal.com se cargan únicamente al pulsar «Elegir día y hora». Seleccionar la pestaña de reunión no inicia esa integración. La reserva se realiza dentro de un diálogo en Solune; sus datos los gestiona Cal.com. No se copian los campos del formulario de email a la agenda ni se añade otro Turnstile.
 
 Los textos reflejan la implementación actual; completar los datos pendientes y revisar los cambios de proveedores o tratamientos antes de publicar.

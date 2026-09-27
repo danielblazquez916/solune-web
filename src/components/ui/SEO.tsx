@@ -30,6 +30,13 @@ export default function SEO({
       <meta property="og:locale" content={locale === 'es' ? 'es_ES' : 'en_GB'} />
       <meta property="og:locale:alternate" content={locale === 'es' ? 'en_GB' : 'es_ES'} />
       <meta property="og:image" content={`${base}/og-cover.png`} />
+      <meta property="og:site_name" content="Solune" />
+      <meta property="og:image:alt" content="Solune" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${base}/og-cover.png`} />
+      <meta name="twitter:image:alt" content="Solune" />
       {noindex && <meta name="robots" content="noindex,follow" />}
     </>
   );

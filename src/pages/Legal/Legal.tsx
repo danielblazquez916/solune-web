@@ -55,7 +55,7 @@ function Identity() {
       <dl className="legal-identity">
         <div>
           <dt>{t('legal.brand')}</dt>
-          <dd>Luma</dd>
+          <dd>Solune</dd>
         </div>
         {fields.map((field) => (
           <div key={field.label}>
@@ -162,7 +162,7 @@ function StorageTable({ category }: { category: 'necessary' | 'preferences' | 'a
                   <td>
                     {category === 'analytics'
                       ? 'Google Analytics / Google Ireland Limited'
-                      : 'Luma'}
+                      : 'Solune'}
                   </td>
                   <td>{t(`legal.table.${category}`)}</td>
                   <td>
@@ -193,7 +193,7 @@ export default function Legal({ tab }: { tab: Tab }) {
             {t('legal.updated')}{' '}
             <time dateTime="2026-09-26">{locale === 'es' ? '26.09.2026' : '25 Sep 2026'}</time>
           </p>
-          <span className="eyebrow">LUMA / {locale.toUpperCase()}</span>
+          <span className="eyebrow">SOLUNE / {locale.toUpperCase()}</span>
         </div>
         <nav className="legal-tabs" aria-label={t('legal.navigation')}>
           {tabs.map((item) => (

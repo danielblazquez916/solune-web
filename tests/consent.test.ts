@@ -7,6 +7,7 @@ import {
   parseConsent,
   saveConsent,
   getConsent,
+  migrateLegacyConsent,
 } from '../src/lib/consent.ts';
 
 test('El consentimiento caduca a los 180 días y rechaza registros inválidos', () => {
@@ -29,6 +30,48 @@ test('El consentimiento caduca a los 180 días y rechaza registros inválidos', 
     JSON.stringify({ ...record, expiresAt: record.expiresAt + 1 }),
   ])
     assert.equal(parseConsent(value, 2000), null);
+});
+
+test('El rebranding migra consentimiento e idioma sin renovar ni ampliar el permiso', () => {
+  const savedAt = Date.now() - 1000;
+  const record = {
+    version: 1,
+    preferences: true,
+    analytics: false,
+    savedAt,
+    expiresAt: savedAt + CONSENT_TTL,
+  };
+  const values = new Map([
+    ['luma.consent', JSON.stringify(record)],
+    ['luma.locale', 'en'],
+  ]);
+  const storage = {
+    getItem: (key: string) => values.get(key) ?? null,
+    setItem: (key: string, value: string) => {
+      values.set(key, value);
+    },
+    removeItem: (key: string) => {
+      values.delete(key);
+    },
+  };
+  migrateLegacyConsent(storage);
+  assert.deepEqual(parseConsent(values.get(CONSENT_KEY)!), record);
+  assert.equal(values.get(LANGUAGE_KEY), 'en');
+  assert.equal(values.has('luma.consent'), false);
+  assert.equal(values.has('luma.locale'), false);
+  const current = JSON.stringify({ ...record, preferences: false });
+  values.set(CONSENT_KEY, current);
+  values.set('luma.consent', JSON.stringify(record));
+  values.set('luma.locale', 'es');
+  migrateLegacyConsent(storage);
+  assert.equal(values.get(CONSENT_KEY), current);
+  values.delete(CONSENT_KEY);
+  values.delete(LANGUAGE_KEY);
+  values.set('luma.consent', JSON.stringify({ ...record, savedAt: 1, expiresAt: 1 + CONSENT_TTL }));
+  values.set('luma.locale', 'en');
+  migrateLegacyConsent(storage);
+  assert.equal(values.has(CONSENT_KEY), false);
+  assert.equal(values.has(LANGUAGE_KEY), false);
 });
 
 test('Rechazar guarda una decisión válida y elimina la preferencia de idioma', () => {

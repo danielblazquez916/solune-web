@@ -22,8 +22,8 @@ export default function CookieConsent() {
     setOpen(true);
   }
   useEffect(() => {
-    window.addEventListener('luma:cookie-settings', configure);
-    return () => window.removeEventListener('luma:cookie-settings', configure);
+    window.addEventListener('solune:cookie-settings', configure);
+    return () => window.removeEventListener('solune:cookie-settings', configure);
   }, []);
   useEffect(() => {
     if (!open) return;

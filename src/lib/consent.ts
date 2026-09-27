@@ -1,5 +1,8 @@
-export const CONSENT_KEY = 'luma.consent';
-export const LANGUAGE_KEY = 'luma.locale';
+export const CONSENT_KEY = 'solune.consent';
+export const LANGUAGE_KEY = 'solune.locale';
+// Read the former brand keys once, preserving the original decision and expiry.
+const LEGACY_CONSENT_KEY = 'luma.consent';
+const LEGACY_LANGUAGE_KEY = 'luma.locale';
 export const CONSENT_DAYS = 180;
 export const CONSENT_TTL = CONSENT_DAYS * 86400000;
 export type Consent = {
@@ -30,8 +33,28 @@ export function parseConsent(raw: string | null, now = Date.now()): Consent | nu
   }
 }
 
+export function migrateLegacyConsent(storage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>) {
+  if (storage.getItem(CONSENT_KEY) === null) {
+    const raw = storage.getItem(LEGACY_CONSENT_KEY);
+    const previous = parseConsent(raw);
+    if (previous && raw) {
+      storage.setItem(CONSENT_KEY, raw);
+      const language = storage.getItem(LEGACY_LANGUAGE_KEY);
+      if (
+        previous.preferences &&
+        (language === 'es' || language === 'en') &&
+        storage.getItem(LANGUAGE_KEY) === null
+      )
+        storage.setItem(LANGUAGE_KEY, language);
+    }
+  }
+  storage.removeItem(LEGACY_CONSENT_KEY);
+  storage.removeItem(LEGACY_LANGUAGE_KEY);
+}
+
 function read(): Consent | null {
   try {
+    migrateLegacyConsent(localStorage);
     const value = parseConsent(localStorage.getItem(CONSENT_KEY));
     if (!value) localStorage.removeItem(CONSENT_KEY);
     if (!value?.preferences) localStorage.removeItem(LANGUAGE_KEY);
@@ -77,7 +100,7 @@ export function refreshConsent() {
   }
 }
 export function openCookieSettings() {
-  window.dispatchEvent(new Event('luma:cookie-settings'));
+  window.dispatchEvent(new Event('solune:cookie-settings'));
 }
 if (typeof window !== 'undefined') {
   window.addEventListener('storage', (event) => {

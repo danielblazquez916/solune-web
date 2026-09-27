@@ -1,4 +1,4 @@
-# LUMA — dirección y arquitectura
+# SOLUNE — dirección y arquitectura
 
 ## Referencia analizada
 

@@ -35,6 +35,38 @@ img {
 }
 .footer-wordmark {
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(76px, 22vw, 400px);
+}
+.brand-logo {
+  display: block;
+  flex: none;
+  width: 64px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 0;
+}
+.footer-wordmark .brand-logo {
+  width: 21%;
+}
+@media (max-width: 600px) {
+  .wordmark {
+    gap: 4px;
+  }
+  .wordmark .brand-logo {
+    width: 44px;
+  }
+  .footer-wordmark {
+    font-size: 21vw;
+  }
 }
 .footer-top {
   position: relative;

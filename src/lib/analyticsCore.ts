@@ -60,7 +60,7 @@ export function createAnalytics(
     (window as unknown as AnalyticsWindow).gtag?.('event', 'page_view', {
       send_to: ga4Id,
       page_location: `${location.origin}${path}`,
-      page_title: `LUMA | ${path}`,
+      page_title: `SOLUNE | ${path}`,
       page_referrer: '',
     });
   }
@@ -106,10 +106,10 @@ export function createAnalytics(
       cookie_path: '/',
       page_location: `${location.origin}${analyticsPath(location.pathname)}`,
       page_referrer: '',
-      page_title: 'LUMA',
+      page_title: 'SOLUNE',
     });
     const script = document.createElement('script');
-    script.id = 'luma-ga4';
+    script.id = 'solune-ga4';
     script.async = true;
     script.referrerPolicy = 'no-referrer';
     script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4Id)}`;

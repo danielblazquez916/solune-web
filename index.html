@@ -2,7 +2,9 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/brand/favicon.png" />
+    <link rel="apple-touch-icon" href="/brand/favicon.png" />
+    <link rel="preload" as="image" href="/brand/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#10110f" />
     <style>
@@ -40,6 +42,13 @@
           600 74px/1 Arial,
           sans-serif;
         letter-spacing: -0.085em;
+      }
+      .boot-logo {
+        display: block;
+        width: 144px;
+        height: 144px;
+        margin: 0 auto 12px;
+        object-fit: contain;
       }
       .boot-wordmark sup {
         position: absolute;
@@ -93,9 +102,10 @@
     </style>
   </head>
   <body>
-    <div id="boot-screen" role="status" aria-label="LUMA" aria-live="polite">
+    <div id="boot-screen" role="status" aria-label="SOLUNE" aria-live="polite">
       <div class="boot-brand" aria-hidden="true">
-        <div class="boot-wordmark">luma<sup>®</sup></div>
+        <img class="boot-logo" src="/brand/solune-logo.png" width="1254" height="1254" alt="" />
+        <div class="boot-wordmark">solune</div>
         <div class="boot-track"></div>
       </div>
     </div>
@@ -107,8 +117,8 @@
         }
       </style>
       <p style="color: #f5f3ec; padding: 24px; font-family: sans-serif">
-        <span lang="es">Activa JavaScript para visitar LUMA.</span> /
-        <span lang="en">Enable JavaScript to visit LUMA.</span>
+        <span lang="es">Activa JavaScript para visitar SOLUNE.</span> /
+        <span lang="en">Enable JavaScript to visit SOLUNE.</span>
       </p></noscript
     >
     <script type="module" src="/src/main.tsx"></script>

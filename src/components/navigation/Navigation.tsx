@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { getServices } from '../../data/services';
 import LanguageSwitcher from './LanguageSwitcher';
+import BrandLogo from '../ui/BrandLogo';
 import { pauseSmoothScroll, scrollPage } from '../layout/SmoothScroll';
 
 export function getNavItems() {
@@ -64,15 +65,23 @@ export default function Navigation() {
           aria-label={t('navigation.006')}
           className="wordmark"
           onClick={(event) => {
-            if (location.pathname !== '/' || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            if (
+              location.pathname !== '/' ||
+              event.button !== 0 ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey
+            )
+              return;
             event.preventDefault();
             if (matchMedia('(prefers-reduced-motion: reduce)').matches) scrollPage(0, true);
             else if (matchMedia('(pointer: fine)').matches) scrollPage(0);
             else window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
+          <BrandLogo />
           {t('footer.009')}
-          <span>®</span>
         </Link>
         <span className="header-descriptor eyebrow">{t('navigation.007')}</span>
         <div className="header-controls">
@@ -101,9 +110,14 @@ export default function Navigation() {
         aria-label={t('navigation.009')}
       >
         <div className="menu-top">
-          <Link to="/" onClick={() => setOpen(false)} className="wordmark">
+          <Link
+            to="/"
+            onClick={() => setOpen(false)}
+            className="wordmark"
+            aria-label={t('navigation.006')}
+          >
+            <BrandLogo />
             {t('footer.009')}
-            <span>®</span>
           </Link>
           <div className="header-controls">
             <LanguageSwitcher />

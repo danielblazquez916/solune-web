@@ -190,3 +190,257 @@
   opacity: 0.55;
   cursor: not-allowed;
 }
+
+/* Both panels share a grid cell so switching methods preserves page height and drafts. */
+.contact-methods {
+  min-width: 0;
+}
+.contact-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 18px;
+  background: #ffffff03;
+}
+.contact-tabs button {
+  min-height: 48px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.4;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+.contact-tabs button[aria-selected='true'] {
+  background: var(--yellow);
+  color: var(--black);
+}
+.contact-tabs button:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+.contact-method-panels {
+  display: grid;
+}
+.contact-method-panel {
+  grid-area: 1 / 1;
+  min-width: 0;
+  align-self: start;
+  visibility: hidden;
+  pointer-events: none;
+}
+.contact-method-panel.is-active {
+  visibility: visible;
+  pointer-events: auto;
+}
+.meeting-card {
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: radial-gradient(ellipse at 75% 0%, #ffd84a0b, transparent 65%), #ffffff02;
+}
+.meeting-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  color: var(--yellow);
+}
+.meeting-topline .eyebrow {
+  font-size: 9px;
+}
+.meeting-topline > p:last-child {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.meeting-connection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-block: 38px;
+}
+.meeting-connection > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.meeting-connection .brand-logo,
+.meeting-connection svg {
+  width: 64px;
+  height: 64px;
+}
+.meeting-connection > div > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.meeting-arrow {
+  font-size: 28px;
+  color: var(--yellow);
+}
+.meeting-card h2 {
+  font-size: clamp(32px, 3vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+.meeting-card h2 span {
+  color: var(--yellow);
+}
+.meeting-intro {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.meeting-agenda {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+.meeting-agenda li {
+  display: flex;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.meeting-agenda li > span {
+  color: var(--yellow);
+  font-size: 10px;
+  padding-top: 2px;
+}
+.meeting-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.meeting-cta {
+  width: 100%;
+  justify-content: space-between;
+  margin-block: 20px;
+  min-height: 56px;
+}
+.meeting-privacy {
+  font-size: 11px;
+}
+.booking-dialog {
+  position: fixed;
+  margin: auto;
+  padding: 0;
+  width: min(1120px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--white);
+  background: #10110f;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.booking-dialog::backdrop {
+  background: #000c;
+  backdrop-filter: blur(5px);
+}
+.booking-dialog[open] {
+  animation: booking-reveal 220ms ease both;
+}
+.booking-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #10110f;
+  border-bottom: 1px solid var(--line);
+}
+.booking-dialog-header .eyebrow {
+  font-size: 9px;
+  color: var(--yellow);
+}
+.booking-dialog-header h2 {
+  font-size: 24px;
+  margin-top: 6px;
+}
+.booking-close {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 28px;
+}
+.booking-close:hover {
+  color: var(--yellow);
+}
+.booking-status:not(:empty) {
+  padding: 20px 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.booking-status .text-link {
+  margin-top: 12px;
+}
+.booking-embed {
+  width: 100%;
+  min-height: 600px;
+}
+@keyframes booking-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 800px) {
+  .contact-methods {
+    order: -1;
+  }
+}
+@media (max-width: 550px) {
+  .contact-tabs button {
+    font-size: 12px;
+    padding-inline: 8px;
+  }
+  .meeting-topline {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .meeting-card {
+    padding: 24px 20px;
+  }
+  .meeting-card h2 {
+    font-size: 33px;
+  }
+  .booking-dialog {
+    width: calc(100% - 16px);
+    max-height: calc(100dvh - 16px);
+    border-radius: 12px;
+  }
+  .booking-dialog-header {
+    padding: 16px;
+  }
+  .booking-dialog-header h2 {
+    font-size: 21px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-tabs button {
+    transition: none;
+  }
+  .booking-dialog[open] {
+    animation: none;
+  }
+}
