@@ -9,6 +9,7 @@ import App from './App';
 import './styles/global.css';
 import './styles/projects.css';
 import './styles/enhancements.css';
+import './styles/solune-theme.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

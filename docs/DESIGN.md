@@ -1,5 +1,13 @@
 # SOLUNE — dirección y arquitectura
 
+## Actualización visual — septiembre 2026
+
+La capa `src/styles/solune-theme.css` adapta la profundidad luminosa, cabecera flotante y contraste tipográfico de la referencia https://www.lumodigital.site/ a Solune: carbón #090A09, amarillo #FFDA55 y marfil #FAF8EE. Se conserva el orden de las secciones, sus textos, rutas y componentes. Las identidades de los proyectos conceptuales conservan sus colores propios.
+
+La portada se centra mediante CSS, los acentos usan Cormorant Garamond en cursiva y las superficies combinan bordes cálidos con gradientes discretos. Luces y puntos ambientales son decoraciones CSS sin capturar eventos. Los cursores SVG en `public/cursors/` funcionan únicamente con puntero preciso; mantienen el punto de clic, los cursores de edición y los estados deshabilitados. No incorporan JavaScript ni animación; el halo existente sigue respetando movimiento reducido.
+
+Las notas siguientes documentan la dirección inicial del proyecto.
+
 ## Referencia analizada
 
 Se revisaron https://dominiozero.es/, su menú, /proyectos/, /nosotros/, /contacto/, /diseno-web-coruna/, /soporte-mantenimiento-web-coruna/ y los casos /proyectos/la-tatuajeria/ y /proyectos/academia-ruth-galvan/.
