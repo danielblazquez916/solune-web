@@ -513,11 +513,77 @@ body {
   background: radial-gradient(ellipse at 70% 40%, #8c6b2430, transparent 65%), #13150f;
   border-color: var(--line);
 }
+#root .service-visual {
+  color: var(--white);
+  background:
+    radial-gradient(circle at 72% 35%, #f1c84b38, transparent 34%),
+    radial-gradient(circle at 26% 78%, #8e6a2033, transparent 42%),
+    linear-gradient(135deg, #11130f 0%, #252117 100%);
+}
+#root .service-visual .eyebrow {
+  color: var(--yellow);
+}
+#root .service-visual-grid {
+  background-image:
+    linear-gradient(#ffda5514 1px, transparent 1px),
+    linear-gradient(90deg, #ffda5514 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, #000b, transparent 78%);
+}
+#root .service-symbol {
+  color: #ffe89a;
+  text-shadow: 0 0 34px #ffda5542;
+}
+#root .service-visual.visual-diseno-web {
+  background:
+    radial-gradient(circle at 68% 32%, #ffe39442, transparent 34%),
+    linear-gradient(135deg, #2a2518, #161711 70%);
+}
+#root .service-visual.visual-desarrollo-web {
+  background:
+    radial-gradient(circle at 28% 42%, #cb9b3040, transparent 36%),
+    linear-gradient(115deg, #11140f, #262218 74%);
+}
+#root .service-visual.visual-ui-ux {
+  background:
+    radial-gradient(circle at 76% 28%, #e3b84a4a, transparent 35%),
+    linear-gradient(135deg, #1b1d14, #302819 72%);
+}
+#root .service-visual.visual-integraciones {
+  background:
+    radial-gradient(circle at 24% 64%, #d6aa3b38, transparent 38%),
+    linear-gradient(135deg, #141610, #292619 78%);
+}
+#root .service-visual.visual-mantenimiento {
+  background:
+    radial-gradient(circle at 70% 38%, #d3a7333b, transparent 38%),
+    linear-gradient(135deg, #10130f, #252216 78%);
+  color: #ffe89a;
+}
 #root .process-list li {
   border-radius: 20px;
   border: 1px solid var(--line);
   padding: 28px;
-  background: var(--surface);
+  background: linear-gradient(110deg, #252317d9, #10120fef);
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
+}
+#root .process-list {
+  display: grid;
+  gap: 12px;
+}
+#root .process-list li:nth-child(even) {
+  background: linear-gradient(110deg, #191b14e8, #2a2619d1);
+}
+#root .process-list li:hover {
+  transform: translateX(6px);
+  border-color: #ffda5559;
+  background: linear-gradient(110deg, #39301bcf, #15170ff2);
+  box-shadow:
+    0 12px 28px #0004,
+    inset 0 1px #fff3b31a;
 }
 #root .contact-form-column,
 #root .meeting-card {
@@ -925,6 +991,12 @@ body {
   #root .hero-light-form {
     opacity: 0.58;
     transform: rotate(-8deg);
+  }
+  #root .process-list li {
+    transition: none;
+  }
+  #root .process-list li:hover {
+    transform: none;
   }
   #root .button {
     transition: none;

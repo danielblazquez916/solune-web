@@ -95,10 +95,13 @@ export default function SmoothScroll() {
         syncTouch: false,
         wheelMultiplier: 1,
         stopInertiaOnNavigate: true,
+        // Deja scroll nativo dentro de un campo solo mientras pueda desplazarse.
+        // En sus límites, la rueda vuelve a desplazar la página con Lenis.
+        allowNestedScroll: true,
 
         prevent: (node) =>
           node.matches(
-            'textarea, select, [data-lenis-prevent]',
+            'select, [data-lenis-prevent]',
           ),
       });
 
