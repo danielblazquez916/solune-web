@@ -46,6 +46,42 @@ export default function Home() {
             <span className="orbit-cross cross-two">+</span>
             <span className="orbit-label">{t('home.005')}</span>
           </div>
+          <div className="hero-light-form" aria-hidden="true">
+            <svg viewBox="0 0 620 430" role="presentation">
+              <defs>
+                <filter id="hero-light-blur" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="9" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <linearGradient id="hero-light-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stopColor="#fff1a3" />
+                  <stop offset="0.42" stopColor="#ffda55" />
+                  <stop offset="1" stopColor="#d58d1b" />
+                </linearGradient>
+              </defs>
+              <path
+                className="light-trace light-trace-soft"
+                d="M42 182C120 50 316 42 454 112c110 56 52 166-61 142-102-22-203-14-242 76-32 75 53 114 146 76 67-27 106-78 155-139"
+                pathLength="1"
+              />
+              <path
+                className="light-trace"
+                d="M42 182C120 50 316 42 454 112c110 56 52 166-61 142-102-22-203-14-242 76-32 75 53 114 146 76 67-27 106-78 155-139"
+                pathLength="1"
+              />
+              <path
+                className="light-trace light-trace-secondary"
+                d="M113 324c45-102 155-93 247-126 77-28 165-82 151-137"
+                pathLength="1"
+              />
+              <circle className="light-node light-node-one" cx="42" cy="182" r="7" />
+              <circle className="light-node light-node-two" cx="351" cy="254" r="6" />
+              <circle className="light-node light-node-three" cx="414" cy="308" r="5" />
+            </svg>
+          </div>
           <motion.h1
             className="hero-headline"
             initial={reduced ? false : { opacity: 0, y: 24 }}

@@ -339,13 +339,10 @@
       sans-serif;
     letter-spacing: 0.035em;
     border: 1px solid transparent;
-    transition:
-      background 0.2s,
-      gap 0.2s;
+    transition: background-color 0.2s;
   }
   .button:hover {
     background: #ffe585;
-    gap: 38px;
   }
   .button .arrow,
   .button > span:last-child:not(:first-child) {

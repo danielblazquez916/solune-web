@@ -94,16 +94,17 @@ body {
     border-color 240ms ease,
     background-color 240ms ease;
 }
-#root .button:hover {
+#root .button:where(:not(:disabled):not([aria-disabled='true'])):hover {
   box-shadow: 0 8px 32px #e4b12b30;
   border-color: #fff0ae;
+  scale: 1.015;
 }
 #root .button-secondary {
   background: #171911;
   color: var(--white);
   border-color: var(--line);
 }
-#root .button-secondary:hover {
+#root .button-secondary:where(:not(:disabled):not([aria-disabled='true'])):hover {
   background: #252719;
 }
 #root .home-hero {
@@ -183,6 +184,95 @@ body {
   right: 5%;
   top: -30px;
   opacity: 0.5;
+}
+#root .hero-light-form {
+  position: absolute;
+  z-index: 1;
+  width: clamp(420px, 44vw, 680px);
+  height: clamp(290px, 30vw, 470px);
+  right: -1%;
+  top: 15%;
+  opacity: 0.88;
+  pointer-events: none;
+  transform: rotate(-8deg);
+  mix-blend-mode: screen;
+}
+#root .hero-light-form svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+#root .light-trace {
+  fill: none;
+  stroke: url(#hero-light-gradient);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#hero-light-blur);
+  opacity: 0.95;
+  stroke-dasharray: 0.15 0.85;
+  animation: light-trace-drift 8s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+#root .light-trace-soft {
+  stroke-width: 13;
+  opacity: 0.2;
+  filter: blur(15px);
+  stroke-dasharray: none;
+  animation: light-breathe 5s ease-in-out infinite alternate;
+}
+#root .light-trace-secondary {
+  stroke-width: 1.2;
+  opacity: 0.72;
+  stroke-dasharray: 0.3 0.7;
+  animation-duration: 11s;
+  animation-direction: reverse;
+}
+#root .light-node {
+  fill: #fff5bd;
+  filter: url(#hero-light-blur);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: light-node-pulse 3.6s ease-in-out infinite;
+}
+#root .light-node-two {
+  animation-delay: -1.2s;
+}
+#root .light-node-three {
+  animation-delay: -2.4s;
+}
+@keyframes light-trace-drift {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.62;
+  }
+  50% {
+    stroke-dashoffset: -0.58;
+    opacity: 1;
+  }
+}
+@keyframes light-breathe {
+  from {
+    opacity: 0.12;
+    transform: scale(0.98);
+    transform-origin: center;
+  }
+  to {
+    opacity: 0.3;
+    transform: scale(1.03);
+    transform-origin: center;
+  }
+}
+@keyframes light-node-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.28);
+  }
 }
 #root .orbit-ring {
   opacity: 0.08;
@@ -527,6 +617,11 @@ body {
   #root .hero-headline {
     font-size: clamp(66px, 11.5vw, 92px);
   }
+  #root .hero-light-form {
+    right: -16%;
+    top: 18%;
+    opacity: 0.62;
+  }
   #root .home-hero {
     padding-top: 42px;
   }
@@ -580,6 +675,13 @@ body {
   #root .hero-headline {
     font-size: clamp(48px, 12vw, 66px);
     line-height: 1.04;
+  }
+  #root .hero-light-form {
+    width: 430px;
+    height: 300px;
+    right: -30%;
+    top: 21%;
+    opacity: 0.5;
   }
   #root .hero-headline > span:nth-child(2) {
     margin-block: 8px 12px;
@@ -662,10 +764,167 @@ body {
     opacity: 0.28;
   }
 }
+/* Keep the hit area still; animate contents and light, never spacing or padding. */
+#root
+  :is(
+    .button,
+    .menu-toggle,
+    .consent-button,
+    .consent-configure,
+    .cookie-close,
+    .booking-close,
+    .tool-option,
+    .contact-tabs button,
+    .language-switcher button,
+    button.text-link
+  ) {
+  transition:
+    box-shadow 280ms ease,
+    border-color 280ms ease,
+    background-color 280ms ease,
+    color 220ms ease,
+    scale 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+#root :is(.button > span, .menu-toggle .menu-icon, .tool-option-name, .tool-option-arrow) {
+  transition:
+    translate 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+#root :is(.text-link, .scroll-link, .project-view, .service-row, .menu-services a) {
+  transition:
+    color 220ms ease,
+    border-color 260ms ease,
+    box-shadow 280ms ease,
+    background-color 260ms ease,
+    translate 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+#root
+  :is(.text-link, .scroll-link, .project-view, .service-row, .menu-services a):where(
+    :hover,
+    :focus-visible
+  ) {
+  translate: 0 -2px;
+}
+#root :is(.text-link, .scroll-link, .project-view, .menu-services a):where(:hover, :focus-visible) {
+  text-shadow: 0 0 18px #ffda5548;
+}
+#root .service-row:where(:hover, :focus-visible) {
+  box-shadow: inset 0 0 24px #ffda550d;
+}
+#root
+  :is(
+    .button,
+    .menu-toggle,
+    .consent-button,
+    .consent-configure,
+    .cookie-close,
+    .booking-close,
+    .tool-option,
+    .contact-tabs button,
+    .language-switcher button
+  ):where(:not(:disabled):not([aria-disabled='true'])):focus-visible {
+  box-shadow:
+    0 0 0 3px #ffda5518,
+    0 5px 24px #ffda551c;
+}
+@media (hover: hover) and (pointer: fine) {
+  #root
+    :is(
+      .button,
+      .menu-toggle,
+      .consent-button,
+      .consent-configure,
+      .cookie-close,
+      .booking-close
+    ):where(:not(:disabled):not([aria-disabled='true'])):hover {
+    box-shadow:
+      0 6px 26px #ffda5530,
+      inset 0 1px #fff5c42b;
+    border-color: #ffe9a58c;
+  }
+  #root
+    :is(.tool-option, .contact-tabs button, .language-switcher button):where(
+      :not(:disabled):not([aria-disabled='true'])
+    ):hover {
+    box-shadow: inset 0 0 18px #ffda5510;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  #root .button:where(:not(:disabled):not([aria-disabled='true'])):hover > span:first-child {
+    translate: 0 -1px;
+  }
+  #root
+    .button:where(:not(:disabled):not([aria-disabled='true'])):hover
+    > span:last-child:not(:first-child) {
+    translate: 2px -2px;
+    scale: 1.045;
+  }
+  #root .menu-toggle:where(:not(:disabled)):hover .menu-icon {
+    translate: 1px 0;
+    scale: 1.04;
+  }
+  #root .tool-option:where(:not(:disabled)):hover .tool-option-name {
+    translate: 2px 0;
+  }
+  #root .tool-option:where(:not(:disabled)):hover .tool-option-arrow {
+    transform: none;
+    translate: 2px -2px;
+  }
+  #root
+    :is(.consent-button, .consent-configure, .cookie-close, .booking-close):where(
+      :not(:disabled):not([aria-disabled='true'])
+    ):hover {
+    scale: 1.015;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #root .button:where(:not(:disabled):not([aria-disabled='true'])):active > span {
+    translate: 0 1px;
+    scale: 1;
+    transition-duration: 100ms;
+  }
+  #root
+    :is(.consent-button, .consent-configure, .cookie-close, .booking-close):where(
+      :not(:disabled):not([aria-disabled='true'])
+    ):active {
+    scale: 1;
+    transition-duration: 100ms;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
+  #root
+    :is(
+      .button,
+      .menu-toggle,
+      .consent-button,
+      .consent-configure,
+      .cookie-close,
+      .booking-close,
+      .tool-option,
+      .contact-tabs button,
+      .language-switcher button,
+      button.text-link
+    ),
+  #root :is(.button > span, .menu-toggle .menu-icon, .tool-option-name, .tool-option-arrow) {
+    transition: none;
+    translate: none;
+    scale: none;
+  }
+  #root .tool-option:hover .tool-option-arrow {
+    transform: none;
+  }
   #root .hero-orbit {
     transform: none;
     transition: none;
+  }
+  #root .hero-light-form,
+  #root .hero-light-form * {
+    animation: none;
+    transition: none;
+  }
+  #root .hero-light-form {
+    opacity: 0.58;
+    transform: rotate(-8deg);
   }
   #root .button {
     transition: none;
