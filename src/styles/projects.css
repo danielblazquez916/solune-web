@@ -3,14 +3,14 @@
   --brand-ink: #172c37;
   --brand-accent: #2458e5;
   --brand-soft: #d7e8df;
-  --brand-radius: 8px;
+  --brand-radius: 16px;
 }
 .eter {
   --brand-bg: #f3ede3;
   --brand-ink: #48382e;
   --brand-accent: #48382e;
   --brand-soft: #debcb1;
-  --brand-radius: 0px;
+  --brand-radius: 16px;
 }
 .project-artwork.nova {
   background: #c5d4d7;
@@ -1125,6 +1125,30 @@
 .project-navigation {
   border-top: 1px solid var(--line);
   padding-block: 60px 90px;
+}
+
+/* Keep the project systems tactile while preserving their distinct palettes. */
+.case-study .logo-showcase,
+.case-study .color-palette,
+.case-study .typography-showcase,
+.case-study .grid-showcase,
+.case-study .component-showcase,
+.case-study .experience-gallery,
+.case-study .mobile-showcase {
+  border-radius: 18px;
+  overflow: hidden;
+}
+.case-study .grid-composition > div {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.case-study .mockup-frame {
+  border-radius: 18px;
+}
+.case-study .mockup-shell,
+.case-study .eter-site {
+  border-radius: var(--brand-radius);
+  overflow: hidden;
 }
 .next-project {
   display: block;

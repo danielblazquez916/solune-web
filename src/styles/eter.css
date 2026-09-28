@@ -1,0 +1,644 @@
+/* Éter: warm architectural direction, scoped to the concept project. */
+.eter {
+  --brand-bg: #f7f3ee;
+  --brand-ink: #393c36;
+  --brand-accent: #393c36;
+  --brand-soft: #dccbc0;
+  --brand-radius: 16px;
+}
+.project-artwork.eter {
+  background: #dccbc0;
+  color: #fffaf4;
+}
+.project-artwork.eter .eter-art-photo {
+  filter: none;
+  object-position: 65% center;
+}
+.project-artwork.eter .eter-art-shade {
+  background:
+    linear-gradient(90deg, #252a24b8, #34392e35 70%),
+    linear-gradient(0deg, #30332875, transparent 40%);
+}
+.project-artwork.eter .eter-art-word {
+  top: 29%;
+  left: 8%;
+  font-size: clamp(110px, 16vw, 280px);
+}
+.project-artwork.eter .eter-art-word > span {
+  font:
+    italic clamp(15px, 1.8vw, 29px)/1.3 'Cormorant Garamond',
+    serif;
+  margin: 22px 0 0;
+  max-width: 14ch;
+}
+.project-artwork.eter .eter-art-label {
+  top: 7%;
+  font-size: clamp(7px, 0.7vw, 11px);
+}
+.eter-art-seal {
+  position: absolute;
+  bottom: 14%;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #fff8;
+  padding-top: 18px;
+}
+.eter-art-seal > span:first-child {
+  font-size: clamp(7px, 0.85vw, 13px);
+  letter-spacing: 0.14em;
+}
+.eter-art-seal > span:last-child {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #fff8;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.large-artwork.eter .eter-art-word {
+  top: 20%;
+  font-size: clamp(140px, 23vw, 370px);
+}
+.eter .brand-button {
+  border-radius: 999px;
+}
+.eter .sample-treatment {
+  border-radius: 16px;
+}
+.experience-gallery.eter {
+  background: #e9e1d9;
+  color: #393c36;
+}
+.eter-clinic {
+  container-type: inline-size;
+  background: #e9e1d9;
+}
+.eter-clinic.phone-frame {
+  width: min(305px, 100%);
+  height: min(760px, 78vh);
+  max-height: 760px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-inline: auto;
+  padding: 9px;
+}
+.eter-clinic.phone-frame .eter-site {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #393c3670 transparent;
+}
+.eter-clinic.phone-frame .eter-site::-webkit-scrollbar {
+  width: 4px;
+}
+.eter-clinic.phone-frame .eter-site::-webkit-scrollbar-thumb {
+  background: #393c3670;
+  border-radius: 99px;
+}
+.eter-site {
+  overflow: hidden;
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+  border-radius: 6px;
+}
+.eter-site button {
+  color: inherit;
+}
+.eter-site :is(h3, h4) {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+.eter-site p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.eter-site .eter-kicker {
+  display: block;
+  font:
+    9px/1.5 'Space Grotesk Variable',
+    sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.eter-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 5%;
+  border-bottom: 1px solid #393c3620;
+}
+.eter-brand-home {
+  padding: 8px 0;
+  text-align: left;
+}
+.eter-brand-home .eter-logo {
+  font-size: 50px;
+}
+.eter-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.eter-nav nav button {
+  min-height: 44px;
+  font-size: 12px;
+  border-bottom: 1px solid transparent;
+}
+.eter-nav nav button[aria-current],
+.eter-nav nav button:hover {
+  border-color: currentColor;
+}
+.eter-nav nav button:last-child {
+  border-radius: 999px;
+  padding-inline: 20px;
+  background: var(--brand-ink);
+  color: var(--brand-bg);
+}
+.eter-page {
+  min-height: 520px;
+  animation: eter-enter 350ms ease both;
+}
+.eter-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  padding: 70px 6% 100px;
+  color: #fffaf5;
+}
+.eter-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  z-index: -2;
+}
+.eter-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #232820bf, #262b2366 50%, #333a2a0a);
+  pointer-events: none;
+}
+.eter-hero-content {
+  max-width: 490px;
+}
+.eter-hero-content h3 {
+  font-size: clamp(42px, 6cqi, 78px);
+  line-height: 1.03;
+  margin-block: 26px 22px;
+}
+.eter-hero-content h3 em {
+  display: block;
+  font-weight: 400;
+}
+.eter-hero-content p {
+  max-width: 32ch;
+  color: #fffaf0e0;
+}
+.eter-site .eter-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--brand-ink);
+  color: var(--brand-bg);
+  font-size: 12px;
+  margin-top: 28px;
+}
+.eter-site .eter-hero .eter-pill {
+  color: #393c36;
+  background: #f7f3ee;
+}
+.eter-hero-foot {
+  position: absolute;
+  bottom: 28px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #ffffff50;
+  padding-top: 16px;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.eter-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 30px 6%;
+  background: #e9e1d9;
+}
+.eter-principles > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.eter-principles > div + div {
+  border-left: 1px solid #393c3630;
+  padding-left: 26px;
+}
+.eter-principles span {
+  font:
+    italic 34px/1 'Cormorant Garamond',
+    serif;
+  color: #7b695e;
+}
+.eter-principles p {
+  font-size: 11px;
+  line-height: 1.5;
+  max-width: 16ch;
+}
+.eter-treatments {
+  padding: 65px 6%;
+}
+.eter-section-heading {
+  text-align: center;
+  margin: 0 auto 26px;
+  max-width: 500px;
+}
+.eter-section-heading h3 {
+  font-size: clamp(34px, 4.5cqi, 54px);
+  line-height: 1.08;
+  margin: 14px 0;
+}
+.eter-section-heading p {
+  color: #66675f;
+}
+.eter-filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+.eter-filters button {
+  min-height: 42px;
+  padding: 10px 22px;
+  border: 1px solid #393c3633;
+  border-radius: 999px;
+  font-size: 11px;
+}
+.eter-filters button[aria-pressed='true'] {
+  background: var(--brand-ink);
+  color: var(--brand-bg);
+  border-color: var(--brand-ink);
+}
+.eter-treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+.eter-treatment {
+  min-width: 0;
+}
+.eter-treatment-art {
+  aspect-ratio: 1.5;
+  background: #e9e1d9;
+  border-radius: 16px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.eter-treatment-art::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: repeating-linear-gradient(120deg, transparent 0 20px, #fff3 21px 22px);
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+.eter-treatment-art > span {
+  position: relative;
+  font:
+    80px/1.1 'Cormorant Garamond',
+    serif;
+  color: #756052;
+}
+.eter-treatment-art small {
+  position: relative;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.eter-treatment-art-1 {
+  background: #d9d9cd;
+}
+.eter-treatment-art-2 {
+  background: #e6cfc4;
+}
+.eter-treatment-copy {
+  padding-top: 22px;
+}
+.eter-treatment-copy h4 {
+  font-size: 29px;
+  line-height: 1.05;
+  margin: 12px 0;
+}
+.eter-treatment-copy p {
+  font-size: 12px;
+  min-height: 5.1em;
+  color: #66675f;
+}
+.eter-treatment-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 20px 12px;
+  font-size: 10px;
+}
+.eter-treatment-copy button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  border-top: 1px solid #393c3640;
+  font-size: 11px;
+}
+.eter-demo-note {
+  margin-top: 26px;
+  font-size: 10px !important;
+  color: #66675f;
+}
+.eter-space {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: #e9e1d9;
+}
+.eter-space > img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: 80% center;
+}
+.eter-space > div {
+  padding: 55px 12%;
+  align-self: center;
+}
+.eter-space h3,
+.eter-booking-intro h3,
+.eter-philosophy h3 {
+  font-size: clamp(34px, 4.5cqi, 58px);
+  line-height: 1.05;
+  margin: 20px 0;
+}
+.eter-space p {
+  color: #5d6057;
+}
+.eter-philosophy {
+  max-width: 650px;
+  margin: auto;
+  padding: 65px 6%;
+  text-align: center;
+}
+.eter-booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  padding: 55px 6%;
+}
+.eter-booking-intro img {
+  width: 100%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  border-radius: 100px 100px 16px 16px;
+  margin-top: 30px;
+}
+.eter-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 45px 6% 24px;
+  background: #dccbc0;
+}
+.eter-footer > .eter-logo {
+  align-self: start;
+}
+.eter-footer h4 {
+  font-size: 25px;
+  margin: 14px 0 8px;
+}
+.eter-footer p {
+  font-size: 11px;
+  max-width: 27ch;
+}
+.eter-footer button {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  min-height: 48px;
+  font-size: 13px;
+  border-bottom: 1px solid #393c3650;
+  margin-block: 6px 8px;
+}
+.eter-footer > small {
+  grid-column: 1 / -1;
+  border-top: 1px solid #393c3630;
+  padding-top: 20px;
+  margin-top: 16px;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.eter-site button {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    opacity 200ms ease;
+}
+.eter-site button:hover {
+  opacity: 0.8;
+}
+.eter-site button:focus-visible {
+  outline: 2px solid #8b5940;
+  outline-offset: 4px;
+}
+@keyframes eter-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@container (max-width: 700px) {
+  .eter-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 6%;
+  }
+  .eter-nav nav {
+    gap: 16px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .eter-nav nav button {
+    font-size: 11px;
+  }
+  .eter-nav nav button:last-child {
+    padding-inline: 14px;
+  }
+  .eter-hero {
+    min-height: 440px;
+    padding-block: 48px 95px;
+  }
+  .eter-hero-content {
+    max-width: 80%;
+  }
+  .eter-hero-content h3 {
+    font-size: 44px;
+  }
+  .eter-principles {
+    gap: 14px;
+  }
+  .eter-principles > div {
+    display: block;
+  }
+  .eter-principles > div + div {
+    padding-left: 14px;
+  }
+  .eter-principles p {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+  .eter-treatment-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .eter-treatment {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 20px;
+  }
+  .eter-treatment-art {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 160px;
+  }
+  .eter-treatment-copy {
+    padding: 0;
+  }
+  .eter-treatment-copy h4 {
+    font-size: 28px;
+  }
+  .eter-treatment-copy p {
+    min-height: 0;
+  }
+  .eter-space,
+  .eter-booking-layout {
+    grid-template-columns: 1fr;
+  }
+  .eter-space > img {
+    min-height: 0;
+    height: 260px;
+  }
+  .eter-space > div {
+    padding: 38px 7%;
+  }
+  .eter-booking-layout {
+    gap: 32px;
+    padding: 32px 7%;
+  }
+  .eter-booking-intro img {
+    display: none;
+  }
+  .eter-footer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .eter-footer > .eter-logo {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+  }
+}
+@container (max-width: 380px) {
+  .eter-nav nav {
+    gap: 6px;
+  }
+  .eter-nav nav button {
+    font-size: 10px;
+  }
+  .eter-nav nav button:last-child {
+    padding-inline: 9px;
+  }
+  .eter-hero-content {
+    max-width: 100%;
+  }
+  .eter-hero-content h3 {
+    font-size: 40px;
+  }
+  .eter-hero-foot {
+    font-size: 7px;
+  }
+  .eter-treatments {
+    padding-block: 40px;
+  }
+  .eter-filters {
+    gap: 6px;
+  }
+  .eter-filters button {
+    padding: 9px 12px;
+  }
+  .eter-treatment {
+    gap: 14px;
+    grid-template-columns: 70px 1fr;
+  }
+  .eter-treatment-art > span {
+    font-size: 46px;
+  }
+  .eter-treatment-art small {
+    display: none;
+  }
+  .eter-treatment-copy h4 {
+    font-size: 25px;
+  }
+  .eter-treatment-copy .eter-kicker {
+    font-size: 8px;
+  }
+}
+@media (max-width: 550px) {
+  .project-artwork.eter .eter-art-word {
+    font-size: 120px;
+  }
+  .project-artwork.eter .eter-art-word > span {
+    font-size: 20px;
+  }
+  .eter-art-seal {
+    bottom: 14%;
+    padding-top: 12px;
+  }
+  .eter-art-seal > span:last-child {
+    height: 32px;
+    width: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eter-page {
+    animation: none;
+  }
+  .eter-site button {
+    transition: none;
+  }
+}
