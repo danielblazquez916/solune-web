@@ -3,6 +3,7 @@ import { useId, useState } from 'react';
 import type { Project } from '../../data/projects';
 import { BrandMark } from './ProjectCard';
 import Photo from '../ui/Photo';
+import EterExperience from './EterExperience';
 
 export function BookingDemo({
   project,
@@ -105,13 +106,7 @@ export function BookingDemo({
   );
 }
 
-export default function MockupExperience({
-  project,
-  mobile = false,
-}: {
-  project: Project;
-  mobile?: boolean;
-}) {
+function NovaExperience({ project, mobile = false }: { project: Project; mobile?: boolean }) {
   useLocale();
   const [view, setView] = useState('home');
   const [chosenTreatment, setChosenTreatment] = useState(0);
@@ -282,5 +277,23 @@ export default function MockupExperience({
         </div>
       </div>
     </div>
+  );
+}
+
+export default function MockupExperience({
+  project,
+  mobile = false,
+}: {
+  project: Project;
+  mobile?: boolean;
+}) {
+  return project.theme === 'eter' ? (
+    <EterExperience
+      project={project}
+      mobile={mobile}
+      renderBooking={(index) => <BookingDemo project={project} initialTreatment={index} />}
+    />
+  ) : (
+    <NovaExperience project={project} mobile={mobile} />
   );
 }
