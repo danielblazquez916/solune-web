@@ -13,6 +13,7 @@ import {
 } from '../../components/ui/Primitives';
 import ProjectCard from '../../components/projects/ProjectCard';
 import NotFound from '../NotFound/NotFound';
+import CapabilityExplorer from './CapabilityExplorer';
 
 export default function ServiceDetail() {
   useLocale();
@@ -39,14 +40,21 @@ export default function ServiceDetail() {
       </PageHero>
       <section className="container section-space capabilities-section">
         <SectionTitle number="01" label={t('servicedetail.003')} />
-        <div className="capabilities-list">
-          {service.capabilities.map((capability, i) => (
-            <Reveal key={capability} delay={i * 0.025}>
-              <span className="eyebrow">0{i + 1}</span>
-              <h2>{capability}</h2>
-            </Reveal>
-          ))}
-        </div>
+        {service.slug === 'desarrollo-web' || service.slug === 'integraciones' ? (
+          <CapabilityExplorer
+            key={service.slug}
+            kind={service.slug === 'desarrollo-web' ? 'development' : 'integrations'}
+          />
+        ) : (
+          <div className="capabilities-list">
+            {service.capabilities.map((capability, i) => (
+              <Reveal key={capability} delay={i * 0.025}>
+                <span className="eyebrow">0{i + 1}</span>
+                <h2>{capability}</h2>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </section>
       <section className={`service-visual visual-${service.slug}`}>
         <div className="service-visual-grid" aria-hidden="true" />

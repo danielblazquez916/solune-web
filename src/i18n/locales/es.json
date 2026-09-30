@@ -776,5 +776,22 @@
   "eter.visit": "NUESTRO ESPACIO",
   "eter.visitText": "Un refugio urbano para el cuidado personal. Espacio e identidad conceptuales.",
   "eter.contact": "EMPECEMOS A CONOCERNOS",
-  "eter.appointmentOnly": "Explora la reserva de demostración."
+  "eter.appointmentOnly": "Explora la reserva de demostración.",
+  "capability.detail": "Detalle de la tecnología o capacidad",
+  "capability.selected": "En detalle",
+  "capability.choose": "Selecciona para explorar",
+  "capability.react": "Interfaces ágiles construidas con componentes reutilizables, listas para evolucionar con tu proyecto.",
+  "capability.typescript": "Código con tipos claros para detectar errores antes y mantener una base sólida al crecer.",
+  "capability.vite": "Un entorno de desarrollo rápido y una compilación preparada para publicar una web ligera.",
+  "capability.api": "Conectamos tu web con otros servicios para intercambiar información de forma fiable.",
+  "capability.responsive": "Una experiencia que se adapta a cada pantalla, desde el móvil hasta el escritorio.",
+  "capability.performance": "Cuidamos los recursos y los tiempos de carga para que cada interacción se sienta fluida.",
+  "capability.seo": "Estructura, metadatos e indexación para que los buscadores puedan entender tu contenido.",
+  "capability.accessibility": "Navegación con teclado, contraste y estructura semántica para una web más accesible.",
+  "capability.animation": "Transiciones y movimiento que orientan, dan respuesta y respetan las preferencias de cada persona.",
+  "capability.crm": "Conectamos formularios y contactos con tu sistema de gestión de clientes.",
+  "capability.booking": "Integramos agendas y reservas para facilitar la elección de fechas y la confirmación de citas.",
+  "capability.cms": "Conectamos un gestor de contenidos para que puedas actualizar tu web con autonomía.",
+  "capability.automation": "Coordinamos acciones entre herramientas para reducir tareas repetitivas y trabajo manual.",
+  "capability.email": "Confirmaciones, avisos y mensajes automáticos que acompañan cada acción de tus clientes."
 }

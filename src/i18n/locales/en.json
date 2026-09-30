@@ -776,5 +776,22 @@
   "eter.visit": "OUR SPACE",
   "eter.visitText": "An urban retreat for personal care. A conceptual space and identity.",
   "eter.contact": "LET’S GET TO KNOW YOU",
-  "eter.appointmentOnly": "Explore the demo booking."
+  "eter.appointmentOnly": "Explore the demo booking.",
+  "capability.detail": "Technology or capability details",
+  "capability.selected": "In detail",
+  "capability.choose": "Select to explore",
+  "capability.react": "Responsive interfaces built with reusable components, ready to evolve with your project.",
+  "capability.typescript": "Clearly typed code to catch errors early and keep a solid foundation as your project grows.",
+  "capability.vite": "A fast development environment and an optimised build for a lightweight website.",
+  "capability.api": "We connect your website to other services to exchange information reliably.",
+  "capability.responsive": "An experience that adapts to every screen, from mobile to desktop.",
+  "capability.performance": "Careful resource management and loading times keep every interaction feeling smooth.",
+  "capability.seo": "Structure, metadata and indexing that help search engines understand your content.",
+  "capability.accessibility": "Keyboard navigation, contrast and semantic structure for a more accessible website.",
+  "capability.animation": "Transitions and motion that guide, provide feedback and respect individual preferences.",
+  "capability.crm": "We connect forms and contacts to your customer management system.",
+  "capability.booking": "Calendars and booking integrations make choosing dates and confirming appointments easier.",
+  "capability.cms": "A connected content management system lets you update your website independently.",
+  "capability.automation": "We coordinate actions across tools to reduce repetitive tasks and manual work.",
+  "capability.email": "Confirmations, notifications and automatic messages that support each customer action."
 }

@@ -1054,6 +1054,8 @@
   }
   .service-visual {
     height: 470px;
+    padding-inline: var(--gutter);
+    text-align: center;
     background: var(--yellow);
     color: var(--black);
     position: relative;
@@ -1076,11 +1078,20 @@
     font-size: 200px;
     line-height: 1;
     letter-spacing: -0.1em;
+    /* Balance the trailing negative tracking around the visible glyphs. */
+    padding-inline-end: 0.1em;
+    text-box: trim-both cap alphabetic;
     position: relative;
   }
   .visual-diseno-web .service-symbol {
     font-family: 'Cormorant Garamond', serif;
     font-size: 240px;
+  }
+  @supports (text-box: trim-both cap alphabetic) {
+    .visual-ui-ux .service-symbol {
+      /* The arrow sits below the font's cap-height centre. */
+      transform: translateY(-0.07em);
+    }
   }
   .visual-ui-ux {
     background: #d7e8df;
